@@ -1,14 +1,19 @@
 <template>
-  <div>
-    <div v-if="userInfo">
-      <div style="color: #13ce66">
-        <span> {{userInfo.nickname || userInfo.email}} <i class="el-icon-caret-bottom el-icon--right"></i></span>
-      </div>
-      <div>
-        <span @click="logout">退出facebook</span>
-      </div>
-    </div>
-    <span v-else index="null" @click="loginFromGithub">facebook登录</span>
+  <div class="top-head-menu">
+    <ul>
+      <li v-if="userInfo">
+        <pc-hover-pop style="display: inline-block; padding: 0 10px" class="pop">
+          <span class="title"> {{userInfo.nickname || userInfo.email}} </span>
+          <template slot="panel">
+            <pc-link @click.native="logout">退出</pc-link>
+          </template>
+        </pc-hover-pop>
+      </li>
+      <li v-else>
+        <pc-link @click.native="loginFromGithub">facebook登录</pc-link>
+      </li>
+      <li>帮助中心</li>
+    </ul>
   </div>
 </template>
 
@@ -42,3 +47,33 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .top-head-menu {
+    height: 40px;
+    background: #f6f6f6;
+    box-shadow: 0 0px 1px #999;
+
+    ul {
+      padding: 0 20px;
+      text-align: right;
+      li {
+        display: inline-block;
+        line-height: 40px;
+        &:not(:last-child):after {
+          content: '|';
+          display: inline-block;
+          height: 100%;
+          padding: 0 3px;
+        }
+        .pop {
+          &:hover {
+            .title {
+              color: #f65d29;
+            }
+          }
+        }
+      }
+    }
+  }
+</style>
