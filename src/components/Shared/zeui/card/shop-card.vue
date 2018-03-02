@@ -8,10 +8,18 @@
         <span>黄焖鸡米饭</span>
       </div>
     </pc-link>
-    <div class="info">
-      <pc-rank></pc-rank>
-      <span>创意菜</span>
-      <span>1342条点评</span>
+    <div class="info clearfix">
+      <div>
+        <pc-rank></pc-rank>
+        <span class="fr">1342条点评</span>
+      </div>
+      <div>
+        <span>创意菜</span>
+        <span class="fr">Makati</span>
+      </div>
+      <div style="margin-top: 5px">
+        <span>₱300/per</span>
+      </div>
     </div>
   </div>
 </template>
