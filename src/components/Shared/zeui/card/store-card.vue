@@ -1,10 +1,10 @@
 <template>
   <div class="ze-shop-card">
-    <pc-link>
+    <pc-link @click.native="$router.push({name: 'storeDetail', params: {id: store.id}})">
       <img :src="store.logo.url" alt="">
     </pc-link>
     <pc-link>
-      <div class="title">
+      <div class="title" @click.native="$router.push({name: 'storeDetail', params: {id: store.id}})">
         <span>{{store.name}}</span>
       </div>
     </pc-link>

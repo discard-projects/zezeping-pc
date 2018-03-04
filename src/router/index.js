@@ -8,7 +8,8 @@ let router = new Router({
   mode: 'history',
   routes: [
     { path: '/', name: 'Home', component: (resolve) => { require(['@/views/Home/Index'], resolve) } },
-    { path: '/login', name: 'Login', component: (resolve) => { require(['@/views/Login'], resolve) } }
+    { path: '/login', name: 'Login', component: (resolve) => { require(['@/views/Login'], resolve) } },
+    { path: '/storeDetail/:id', name: 'storeDetail', component: (resolve) => { require(['@/views/Store/Show'], resolve) } }
   ]
 })
 

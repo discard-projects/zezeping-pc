@@ -53,5 +53,8 @@ export default {
       white-space:nowrap;
       width: 45%;
     }
+    .bottom-star {
+      color: #999;
+    }
   }
 </style>

@@ -32,10 +32,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-  .main-body {
-    max-width: 1232px;
-     margin: 30px auto 0;
-  }
-</style>

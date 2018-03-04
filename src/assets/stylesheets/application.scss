@@ -16,7 +16,18 @@
 .clearfix:after {clear: both;}
 .clearfix {clear: both;zoom: 1;}
 /* 浮动结束 */
-
 .display-none {  display: none;  }
 .display-block {  display: block;  }
+
+.main-body {
+  max-width: 1232px;
+  margin: 30px auto 0;
+}
+
+.br15 {
+  margin-right: 15px;
+}
+.br10 {
+  margin-right: 10px;
+}
 
