@@ -5,7 +5,7 @@
     </pc-link>
     <pc-link>
       <div class="title">
-        <span>{{store.title}}</span>
+        <span>{{store.name}}</span>
       </div>
     </pc-link>
     <div class="info clearfix">
@@ -45,7 +45,7 @@ export default {
     img {
       width: 180px;
       height: 100px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       transition: transform 0.2s;
       &:hover {
         transform: scale(1.02);

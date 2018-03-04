@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main-body">
-      <category title="美食" :stores="home.food_stores"></category>
+      <category title="美食" :stores="home.food_stores" v-if="home"></category>
     </div>
   </div>
 </template>
