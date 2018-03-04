@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main-body">
-      <category></category>
+      <category title="美食" :stores="home.food_stores"></category>
     </div>
   </div>
 </template>
@@ -12,6 +12,21 @@ import query from '@/components/Shared/Mixin/query'
 import Category from './parts/category.vue'
 export default {
   mixins: [index, query],
+  data () {
+    return {
+      home: null
+    }
+  },
+  methods: {
+    getHome () {
+      this.api.getHome().then(res => {
+        this.home = res.data
+      })
+    }
+  },
+  mounted () {
+    this.getHome()
+  },
   components: {
     Category
   }

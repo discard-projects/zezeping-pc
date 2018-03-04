@@ -48,7 +48,9 @@ var api = {
   loginFromGithub: (data) => cusAxios.get('auth/github', data),
   // validateToken: () => instance.get('auth/validate_token'),
   // must auth
-  getMeProfile: () => cusAxios.get('v1/profile')
+  getMeProfile: () => cusAxios.get('v1/profile'),
+  // Home
+  getHome: () => cusAxios.get('v1/home')
 }
 api.install = function (Vue, options) {
   if (options.store) {

@@ -1,24 +1,24 @@
 <template>
   <div class="ze-shop-card">
     <pc-link>
-      <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=634887906,3562780320&fm=27&gp=0.jpg" alt="">
+      <img :src="store.logo.url" alt="">
     </pc-link>
     <pc-link>
       <div class="title">
-        <span>黄焖鸡米饭</span>
+        <span>{{store.title}}</span>
       </div>
     </pc-link>
     <div class="info clearfix">
       <div>
         <pc-rank></pc-rank>
-        <span class="fr">1342条点评</span>
+        <span class="fr">{{store.comments_count}}条点评</span>
       </div>
       <div>
         <span>创意菜</span>
-        <span class="fr">Makati</span>
+        <span class="fr">{{store.region}}</span>
       </div>
       <div style="margin-top: 5px">
-        <span>₱300/per</span>
+        <span>₱{{store.per_expense}}/per</span>
       </div>
     </div>
   </div>
@@ -26,6 +26,11 @@
 
 <script>
 export default {
+  props: {
+    store: {
+      required: true
+    }
+  }
 }
 </script>
 

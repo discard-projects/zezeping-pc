@@ -2,20 +2,29 @@
   <pc-card>
     <div class="header">
       <div class="title">
-        <span>美食</span>
+        <span>{{title}}</span>
       </div>
     </div>
     <div class="body">
-      <shop-card v-for="i in 10" :key="i"></shop-card>
+      <store-card v-for="store in stores" :store="store" :key="store.id"></store-card>
     </div>
   </pc-card>
 </template>
 
 <script>
-import ShopCard from '@/components/Shared/zeui/card/shop-card'
+import StoreCard from '@/components/Shared/zeui/card/store-card'
 export default {
+  props: {
+    title: {
+      require: true
+    },
+    stores: {
+      type: Array,
+      required: true
+    }
+  },
   components: {
-    ShopCard
+    StoreCard
   }
 }
 </script>
