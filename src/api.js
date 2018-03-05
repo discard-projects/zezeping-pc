@@ -50,7 +50,8 @@ var api = {
   // must auth
   getMeProfile: () => cusAxios.get('v1/profile'),
   // Home
-  getHome: () => cusAxios.get('v1/home')
+  getHome: () => cusAxios.get('v1/home'),
+  getStore: (id) => cusAxios.get(`v1/stores/${id}`)
 }
 api.install = function (Vue, options) {
   if (options.store) {

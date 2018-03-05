@@ -5,7 +5,7 @@
       <ul>
         <li><span class="username">张小宝</span></li>
         <li class="info">
-          <pc-rank fontSize="14px" class="br15"></pc-rank>
+          <pc-rank fontSize="14px" class="br10"></pc-rank>
           <span class="br10">口味：3.2</span>
           <span class="br10">环境：3.2</span>
           <span>服务：3.2</span>
