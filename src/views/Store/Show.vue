@@ -3,9 +3,12 @@
     <div class="left-body">
       <pc-card>
         <store-info :store="store"></store-info>
+        <div class="store-opts">
+          <pc-button type="primary" size="small">写点评</pc-button>
+        </div>
       </pc-card>
       <pc-card style="margin: 15px 0;">
-        <comment-info></comment-info>
+        <comment-info :store="store"></comment-info>
       </pc-card>
     </div>
   </div>
@@ -36,3 +39,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .store-opts {
+    margin-top: 15px;
+  }
+</style>

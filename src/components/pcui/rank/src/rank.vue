@@ -30,7 +30,7 @@ export default {
       default: 'icon-full-star'
     },
     score: {
-      type: Number,
+      type: [Number, String],
       default: 1
     },
     maxScore: {

@@ -60,7 +60,18 @@ exports.cssLoaders = function (options) {
     postcss: generateLoaders(),
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
-    scss: generateLoaders('sass'),
+    scss: generateLoaders('sass').concat(
+      {
+        loader: 'sass-resources-loader',
+        options: {
+          resources: [
+            path.resolve(__dirname, '../src/assets/stylesheets/mixins/var.scss'),
+            path.resolve(__dirname, '../src/assets/stylesheets/mixins/animation.scss'),
+            path.resolve(__dirname, '../src/assets/stylesheets/mixins/classes.scss')
+          ]
+        }
+      }
+    ),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }

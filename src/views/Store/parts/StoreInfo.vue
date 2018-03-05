@@ -1,7 +1,8 @@
 <template>
   <div v-if="store">
     <div class="title">
-      {{store.name}}
+      <img class="logo" :src="store.logo_url" alt="">
+      <span>{{store.name}}</span>
     </div>
     <div class="info">
       <div style="display: flex; align-items: center">
@@ -13,13 +14,18 @@
         <span>服务：{{store.store_detail.rank_service}}</span>
       </div>
       <p style="margin: 8px 0;">
-        {{store.address}}
+        地址：{{store.address}}
       </p>
       <p style="margin: 8px 0;">
         电话： {{store.store_detail.phones.join(',')}}
       </p>
-      <div>
+      <div class="attachment-images" v-if="store.attachment_images.length">
         <span>图片：</span>
+        <ul>
+          <li v-for="attachmentImage in store.attachment_images" :key="attachmentImage.id">
+            <img :src="attachmentImage.file.url" alt="">
+          </li>
+        </ul>
         <img src="" alt="">
       </div>
     </div>
@@ -39,12 +45,35 @@ export default {
 
 <style lang="scss" scoped>
   .title {
+    display: flex;
+    align-items: center;
     font-size: 20px;
     padding-bottom: 6px;
+
+    .logo {
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
+      float: left;
+      margin-right: 5px;
+    }
   }
   .info {
     color: #999;
     font-size: 14px;
     line-height: 16px;
+
+    .attachment-images {
+      display: flex;
+      align-items: flex-start;
+      ul li {
+        display: inline-block;
+        border: 1px solid #f2f2f2;
+        img {
+          width: 70px;
+          height: 70px;
+        }
+      }
+    }
   }
 </style>

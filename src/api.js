@@ -51,7 +51,8 @@ var api = {
   getMeProfile: () => cusAxios.get('v1/profile'),
   // Home
   getHome: () => cusAxios.get('v1/home'),
-  getStore: (id) => cusAxios.get(`v1/stores/${id}`)
+  getStore: (id) => cusAxios.get(`v1/stores/${id}`),
+  getStoreComments: (storeId) => cusAxios.get(`v1/stores/${storeId}/comments`)
 }
 api.install = function (Vue, options) {
   if (options.store) {
