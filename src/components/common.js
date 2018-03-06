@@ -4,13 +4,14 @@ import Vue from 'vue'
 import pcui from './pcui'
 Vue.use(pcui)
 
-import { Loading, Rate, Form, FormItem, Input } from 'element-ui'
+import { Loading, Message, Rate, Form, FormItem, Input } from 'element-ui'
 let components = [Rate, Form, FormItem, Input]
 components.forEach((element) => {
   Vue.component(element.name, element)
 })
 Vue.use(Loading.directive)
 Vue.prototype.$loading = Loading.service
+Vue.prototype.$message = Message
 
 
 import LoadingBar from './Shared/LoadingBar'

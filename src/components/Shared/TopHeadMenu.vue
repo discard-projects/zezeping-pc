@@ -37,7 +37,6 @@ export default {
       window.location.href = `${process.env.API_ROOT}/auth/facebook?auth_origin_url=${process.env.WEB_HOST}/login`
     },
     logout () {
-      console.log('logout')
       this.api.logout().then(() => {
         this.$store.dispatch('logout')
       }).catch(() => {

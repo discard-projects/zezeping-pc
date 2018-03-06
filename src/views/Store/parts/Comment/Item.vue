@@ -1,5 +1,5 @@
 <template>
-  <div class="clearfix">
+  <div class="clearfix" style="margin-bottom: 16px">
     <img class="fl user-logo" :src="comment.user.image" alt="">
     <div class="right-body">
       <ul>
@@ -16,6 +16,9 @@
           <p class="content">
             {{comment.content}}
           </p>
+        </li>
+        <li>
+          <p class="time">{{comment.created_time}}</p>
         </li>
       </ul>
     </div>
@@ -43,7 +46,6 @@ export default {
   .right-body {
     overflow: hidden;
     font-size: 14px;
-    padding-bottom: 15px;
 
     li {
       display: flex;
@@ -57,6 +59,11 @@ export default {
 
     .info {
       color: #999;
+    }
+
+    .time {
+      color: #999;
+      font-size: 14px;
     }
   }
 </style>
