@@ -6,21 +6,53 @@
       </div>
     </div>
     <div class="body">
-      <store-card v-for="store in stores" :store="store" :key="store.id"></store-card>
+      <store-card v-for="store in tableData.data" :store="store" :key="store.id"></store-card>
+      <div>
+        <pagination :q="q" :paginateMeta="paginateMeta" :pageSizes="[12]" :pushRouter="fetchData" layout="prev, pager, next"></pagination>
+      </div>
     </div>
   </pc-card>
 </template>
 
 <script>
 import StoreCard from '@/components/Shared/zeui/card/store-card'
+import index from '@/components/Shared/Mixin/index'
+import query from '@/components/Shared/Mixin/query'
 export default {
+  mixins: [index, query],
   props: {
-    title: {
+    name: {
       require: true
-    },
-    stores: {
-      type: Array,
-      required: true
+    }
+  },
+  data () {
+    return {
+      q: {
+        per_page: 12
+      }
+    }
+  },
+  computed: {
+    title () {
+      switch (this.name) {
+        case 'Food':
+          return '美食'
+      }
+    }
+  },
+  watch: {
+    name: {
+      handler (nv) {
+        if (nv) {
+          this.fetchData()
+        }
+      },
+      immediate: true
+    }
+  },
+  methods: {
+    fetchData () {
+      this._fetchData(this.api.getHomeStores(Object.assign({}, this.q, {category_name: this.name})))
     }
   },
   components: {

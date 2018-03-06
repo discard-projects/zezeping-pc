@@ -8,14 +8,14 @@
         <span>{{store.name}}</span>
       </div>
     </pc-link>
-    <div class="info clearfix">
-      <div>
+    <div class="info">
+      <div class="clearfix">
         <pc-rank :score="store.rank"></pc-rank>
         <span class="fr">{{store.comments_count}}条点评</span>
       </div>
-      <div>
+      <div class="clearfix">
         <span>创意菜</span>
-        <span class="fr">{{store.region}}</span>
+        <span class="fr">{{store.region_name}}</span>
       </div>
       <div style="margin-top: 5px">
         <span>₱{{store.per_expense}}/per</span>

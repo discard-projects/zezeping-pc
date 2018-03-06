@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="main-body">
-      <category title="美食" :stores="home.food_stores" v-if="home"></category>
+    <div class="main-body" v-if="home">
+      <category :name="category.name" v-for="category in home.categories" :key="category.id"></category>
     </div>
   </div>
 </template>

@@ -13,7 +13,9 @@ Vue.use(Loading.directive)
 Vue.prototype.$loading = Loading.service
 Vue.prototype.$message = Message
 
-
 import LoadingBar from './Shared/LoadingBar'
 LoadingBar.config({color: '#5cb85c', failedColor: '#ff4949'})
 Vue.prototype.$loadingBar = LoadingBar
+
+import Pagination from './Shared/Pagination'
+Vue.component(Pagination.name, Pagination)

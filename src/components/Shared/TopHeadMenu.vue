@@ -1,6 +1,11 @@
 <template>
-  <div class="top-head-menu">
-    <ul>
+  <div class="top-head-menu clearfix" style="background: #fff">
+    <ul class="left-ul fl">
+      <li>
+        <pc-link @click.native="$router.push({name: 'Home'})" style="color: #f59c20; font-size: 16px">ZeZePing</pc-link>
+      </li>
+    </ul>
+    <ul class="right-ul fr">
       <li v-if="userInfo">
         <pc-hover-pop style="display: inline-block; padding: 0 10px" class="pop">
           <span class="title"> {{userInfo.nickname || userInfo.email}} </span>
@@ -55,7 +60,6 @@ export default {
 
     ul {
       padding: 0 20px;
-      text-align: right;
       li {
         display: inline-block;
         line-height: 40px;

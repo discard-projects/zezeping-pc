@@ -16,7 +16,7 @@ export default {
     fillData () {
       let q = {
         page: 1,
-        per_page: 25
+        per_page: this.q.per_page || 25
       }
       // full data from url query, if admin just refresh page, can not load q_xxx keys.
       this.q = q

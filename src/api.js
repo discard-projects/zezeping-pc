@@ -78,6 +78,7 @@ var api = {
   getMeProfile: () => cusAxios.get('v1/profile'),
   // Home
   getHome: () => cusAxios.get('v1/home'),
+  getHomeStores: (params) => cusAxios.get('v1/home/stores', { params }),
   getStore: (id) => cusAxios.get(`v1/stores/${id}`),
   getStoreComments: (storeId) => cusAxios.get(`v1/stores/${storeId}/comments`),
   postStoreComment: (storeId, data) => cusAxios.post(`v1/stores/${storeId}/comments`, data)
