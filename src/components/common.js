@@ -4,8 +4,8 @@ import Vue from 'vue'
 import pcui from './pcui'
 Vue.use(pcui)
 
-import { Loading, Form, FormItem, Input } from 'element-ui'
-let components = [Form, FormItem, Input]
+import { Loading, Rate, Form, FormItem, Input } from 'element-ui'
+let components = [Rate, Form, FormItem, Input]
 components.forEach((element) => {
   Vue.component(element.name, element)
 })

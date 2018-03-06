@@ -8,10 +8,10 @@
       <div style="display: flex; align-items: center">
         <pc-rank :score="store.rank" class="br10"></pc-rank>
         <span class="br10">{{store.comments_count}}条点评</span>
-        <span class="br10">₱{{store.per_expense}}/人</span>
-        <span class="br10">口味：{{store.store_detail.rank_taste}}</span>
-        <span class="br10">环境：{{store.store_detail.rank_env}}</span>
-        <span>服务：{{store.store_detail.rank_service}}</span>
+        <span class="br10" v-if="store.per_expense">₱{{store.per_expense}}/人</span>
+        <!--<span class="br10">口味：{{store.store_detail.rank_taste}}</span>-->
+        <!--<span class="br10">环境：{{store.store_detail.rank_env}}</span>-->
+        <!--<span>服务：{{store.store_detail.rank_service}}</span>-->
       </div>
       <p style="margin: 8px 0;">
         地址：{{store.address}}

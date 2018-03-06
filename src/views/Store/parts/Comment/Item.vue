@@ -3,12 +3,14 @@
     <img class="fl user-logo" :src="comment.user.image" alt="">
     <div class="right-body">
       <ul>
-        <li><span class="username">{{comment.user.nickname || comment.user.name}}</span></li>
+        <li>
+          <span class="username">{{comment.user.nickname || comment.user.name}}</span>
+          <pc-rank :score="comment.rank" fontSize="14px" class="br10" style="margin-left: 10px"></pc-rank>
+        </li>
         <li class="info">
-          <pc-rank :score="comment.rank" fontSize="14px" class="br10"></pc-rank>
-          <span class="br10">口味：{{comment.rank_taste}}</span>
-          <span class="br10">环境 {{comment.rank_env}}</span>
-          <span>服务：{{comment.rank_service}}</span>
+          <!--<span class="br10">口味：{{comment.rank_taste}}</span>-->
+          <!--<span class="br10">环境 {{comment.rank_env}}</span>-->
+          <!--<span>服务：{{comment.rank_service}}</span>-->
         </li>
         <li>
           <p class="content">
@@ -41,6 +43,7 @@ export default {
   .right-body {
     overflow: hidden;
     font-size: 14px;
+    padding-bottom: 15px;
 
     li {
       display: flex;
