@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import CommentItem from './Comment/CommentItem.vue'
+import CommentItem from './Comment/Item.vue'
 export default {
   props: {
     store: {

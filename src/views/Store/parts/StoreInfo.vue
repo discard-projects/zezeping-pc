@@ -53,7 +53,7 @@ export default {
     .logo {
       width: 24px;
       height: 24px;
-      border-radius: 12px;
+      border-radius: 5px;
       float: left;
       margin-right: 5px;
     }

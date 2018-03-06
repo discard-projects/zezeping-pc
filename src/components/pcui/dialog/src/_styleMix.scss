@@ -1,0 +1,13 @@
+@mixin pc-dialog {
+  .pc-dialog {
+    @include dialog-mask;
+    @include animation-fade-in;
+    @include animation-zoom-in;
+    animation: animation-fade-in .12s ease-in forwards;
+
+    .dialog-main-body {
+      background: #fff;
+      animation: animation-zoom-in .12s ease-in forwards;
+    }
+  }
+}

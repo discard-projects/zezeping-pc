@@ -4,7 +4,8 @@
       <pc-card>
         <store-info :store="store"></store-info>
         <div class="store-opts">
-          <pc-button type="primary" size="small">写点评</pc-button>
+          <pc-button @click="$refs['commentNewRef'].dialogShow = true" type="primary" size="small">写点评</pc-button>
+          <comment-new ref="commentNewRef"></comment-new>
         </div>
       </pc-card>
       <pc-card style="margin: 15px 0;">
@@ -17,6 +18,7 @@
 <script>
 import StoreInfo from './parts/StoreInfo.vue'
 import CommentInfo from './parts/CommentInfo.vue'
+import CommentNew from './parts/Comment/New.vue'
 export default {
   data () {
     return {
@@ -35,7 +37,8 @@ export default {
   },
   components: {
     StoreInfo,
-    CommentInfo
+    CommentInfo,
+    CommentNew
   }
 }
 </script>
