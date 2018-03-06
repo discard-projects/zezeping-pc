@@ -10,7 +10,7 @@
     </pc-link>
     <div class="info clearfix">
       <div>
-        <pc-rank></pc-rank>
+        <pc-rank :score="store.rank"></pc-rank>
         <span class="fr">{{store.comments_count}}条点评</span>
       </div>
       <div>
