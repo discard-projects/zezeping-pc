@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 import api from './api'
+import 'element-ui/lib/theme-chalk/index.css'
 import './assets/stylesheets/application.scss'
 import './components/common'
 

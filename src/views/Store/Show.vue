@@ -5,11 +5,11 @@
         <store-info :store="store"></store-info>
         <div class="store-opts">
           <pc-button @click="$refs['commentNewRef'].dialogShow = true" type="primary" size="small">写点评</pc-button>
-          <comment-new ref="commentNewRef"></comment-new>
+          <comment-new @fetchData="refetchData" ref="commentNewRef"></comment-new>
         </div>
       </pc-card>
       <pc-card style="margin: 15px 0;">
-        <comment-info :store="store"></comment-info>
+        <comment-info :store="store" ref="commentInfoRef"></comment-info>
       </pc-card>
     </div>
   </div>
@@ -30,6 +30,10 @@ export default {
       this.api.getStore(this.$route.params.id).then(res => {
         this.store = res.data.item
       })
+    },
+    refetchData () {
+      this.getStoreInfo()
+      this.$refs['commentInfoRef'].getStoreComments()
     }
   },
   mounted () {

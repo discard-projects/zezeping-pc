@@ -6,6 +6,7 @@
 }
 
 @mixin tap {
+  cursor: pointer;
   &:active {
     opacity: .5;
   }

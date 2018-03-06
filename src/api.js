@@ -52,7 +52,8 @@ var api = {
   // Home
   getHome: () => cusAxios.get('v1/home'),
   getStore: (id) => cusAxios.get(`v1/stores/${id}`),
-  getStoreComments: (storeId) => cusAxios.get(`v1/stores/${storeId}/comments`)
+  getStoreComments: (storeId) => cusAxios.get(`v1/stores/${storeId}/comments`),
+  postStoreComment: (storeId, data) => cusAxios.post(`v1/stores/${storeId}/comments`, data)
 }
 api.install = function (Vue, options) {
   if (options.store) {
