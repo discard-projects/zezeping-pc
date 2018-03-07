@@ -9,11 +9,11 @@ const pageScroll = (function () {
     lock: (el) => {
       if (islock) return;
       islock = true;
-      (el || document).addEventListener('mousewheel', fn)
+      (el || document).addEventListener('mousewheel', fn, true)
     },
     unlock: (el) => {
       islock = false;
-      (el || document).removeEventListener('mousewheel', fn)
+      (el || document).removeEventListener('mousewheel', fn, true)
     }
   }
 })()

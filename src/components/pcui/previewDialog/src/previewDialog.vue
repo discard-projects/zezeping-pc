@@ -3,9 +3,9 @@
     <span class="pointer" @click.prevent="dialogVisible = true">
       <slot></slot>
     </span>
-    <pc-dialog v-model="dialogVisible" style="text-align: center">
+    <el-dialog :visible.sync="dialogVisible" style="text-align: center" append-to-body>
       <slot name="preview"></slot>
-    </pc-dialog>
+    </el-dialog>
   </div>
 </template>
 

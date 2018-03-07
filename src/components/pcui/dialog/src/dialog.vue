@@ -7,12 +7,15 @@
           <i class="iconfont icon-close"></i>
         </span>
       </div>
-      <slot></slot>
+      <div class="content">
+        <slot></slot>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import pageScroll from './pageScroll'
 export default {
   name: 'pcDialog',
   props: {
@@ -37,6 +40,16 @@ export default {
         this.$emit('input', newVal)
       }
     }
+  },
+  updated () {
+    if (this.currentValue) {
+      pageScroll.lock()
+    } else {
+      pageScroll.unlock()
+    }
+  },
+  destroyed () {
+    pageScroll.unlock()
   }
 }
 </script>

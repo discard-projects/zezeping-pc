@@ -27,7 +27,7 @@
             <pc-preview-dialog>
               <img :src="attachmentImage.file_thumb_url" alt="" class="thumb">
               <template slot="preview">
-                <img :src="attachmentImage.file_url" alt="图片预览">
+                <img :src="attachmentImage.file_url" alt="图片预览" style="max-width: 100%">
               </template>
             </pc-preview-dialog>
           </li>
