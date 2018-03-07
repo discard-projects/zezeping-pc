@@ -18,6 +18,16 @@
           </p>
         </li>
         <li>
+          <div style="display: inline-block; margin-top: 5px" v-for="(attachmentImage,index) in comment.attachment_images" :key="index">
+            <pc-preview-dialog>
+              <pc-link><img :src="attachmentImage.file_thumb.url" alt=""></pc-link>
+              <template slot="preview">
+                <img :src="attachmentImage.file_small.url" alt="图片预览" style="max-height: 500px; width: auto; max-width: 100%">
+              </template>
+            </pc-preview-dialog>
+          </div>
+        </li>
+        <li>
           <p class="time">{{comment.created_time}}</p>
         </li>
       </ul>

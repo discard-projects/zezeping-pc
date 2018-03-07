@@ -9,6 +9,9 @@
       <el-form-item label="内容" prop="content">
         <el-input type="textarea" v-model="form.content" placeholder="说点什么呢.."></el-input>
       </el-form-item>
+      <el-form-item label="图片">
+        <multiple-uploader v-model="form.attachment_image_ids" :attachment-images.sync="form.attachment_images"></multiple-uploader>
+      </el-form-item>
       <el-form-item>
         <pc-button type="primary" @click="handlerCreate('formRef')">立即创建</pc-button>
       </el-form-item>
@@ -19,13 +22,16 @@
 <script>
 import validators from '@/libs/validators'
 import newMix from '@/components/Shared/Mixin/new'
+import MultipleUploader from '@/components/Shared/Uploader/MultipleUploader'
 export default {
   mixins: [newMix],
   data () {
     return {
       form: {
         rank: 0,
-        content: ''
+        content: '',
+        attachment_image_ids: [],
+        attachment_images: []
       },
       rules: {
         rank: [
@@ -45,6 +51,9 @@ export default {
         }
       })
     }
+  },
+  components: {
+    MultipleUploader
   }
 }
 </script>
