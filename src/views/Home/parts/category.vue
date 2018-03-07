@@ -40,16 +40,6 @@ export default {
       }
     }
   },
-  watch: {
-    name: {
-      handler (nv, ov) {
-        if (nv && nv !== ov) {
-          this.fetchData()
-        }
-      },
-      immediate: true
-    }
-  },
   methods: {
     fetchData () {
       this._fetchData(this.api.getHomeStores(Object.assign({}, this.q, {category_name: this.name})))

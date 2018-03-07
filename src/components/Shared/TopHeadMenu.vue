@@ -2,7 +2,9 @@
   <div class="top-head-menu clearfix" style="background: #fff">
     <ul class="left-ul fl">
       <li>
-        <pc-link @click.native="$router.push({name: 'Home'})" style="color: #f59c20; font-size: 16px">zezePing</pc-link>
+        <pc-link @click.native="$router.push({name: 'Home'})" style="color: #f59c20; font-size: 16px">
+          <img src="~assets/images/logo.png" alt="" style="height: 40px">
+        </pc-link>
       </li>
     </ul>
     <ul class="right-ul fr">
