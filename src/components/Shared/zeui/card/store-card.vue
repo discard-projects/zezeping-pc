@@ -43,8 +43,8 @@ export default {
     text-align: left;
 
     img {
-      width: 180px;
-      height: 100px;
+      max-width: 180px;
+      max-height: 100px;
       margin-bottom: 5px;
       transition: transform 0.2s;
       &:hover {
