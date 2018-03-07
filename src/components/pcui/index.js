@@ -4,6 +4,7 @@ import Card from './card'
 import Rank from './rank'
 import Button from './button'
 import Dialog from './dialog'
+import PreviewDialog from './previewDialog'
 export default {
   install (Vue, options) {
     Vue.use(HoverPop)
@@ -12,5 +13,6 @@ export default {
     Vue.use(Rank)
     Vue.use(Button)
     Vue.use(Dialog)
+    Vue.use(PreviewDialog)
   }
 }
