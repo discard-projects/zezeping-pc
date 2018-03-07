@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import pageScroll from './pageScroll'
 export default {
   name: 'pcDialog',
   props: {
@@ -38,16 +37,6 @@ export default {
         this.$emit('input', newVal)
       }
     }
-  },
-  updated () {
-    if (this.currentValue) {
-      pageScroll.lock()
-    } else {
-      pageScroll.unlock()
-    }
-  },
-  destroyed () {
-    pageScroll.unlock()
   }
 }
 </script>

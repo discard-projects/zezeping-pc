@@ -8,6 +8,10 @@
     .dialog-main-body {
       background: #fff;
       padding: 15px;
+      max-width: 80%;
+      max-height: 80%;
+      overflow: auto;
+
       animation: animation-zoom-in .12s ease-in forwards;
 
       .dialog-header {

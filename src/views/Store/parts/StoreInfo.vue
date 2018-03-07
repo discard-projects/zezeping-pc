@@ -4,7 +4,7 @@
       <img class="logo" :src="store.logo_url" alt="">
       <span>{{store.name}}</span>
     </div>
-    <img class="wechat-qrcode fr" v-if="store.store_detail.wechat_qrcode_url" :src="store.store_detail.wechat_qrcode_url" alt="">
+    <img class="wechat-qrcode thumb fr" v-if="store.store_detail.wechat_qrcode_url" :src="store.store_detail.wechat_qrcode_url" alt="">
     <div class="info">
       <div style="display: flex; align-items: center; margin-bottom: 8px;">
         <pc-rank :score="store.rank" class="br10"></pc-rank>
@@ -25,9 +25,9 @@
         <ul>
           <li v-for="attachmentImage in store.attachment_images" :key="attachmentImage.id">
             <pc-preview-dialog>
-              <img :src="attachmentImage.file_thumb_url" alt="">
+              <img :src="attachmentImage.file_thumb_url" alt="" class="thumb">
               <template slot="preview">
-                <img :src="attachmentImage.file_url" alt="图片预览" style="max-height: 500px; width: auto; max-width: 100%">
+                <img :src="attachmentImage.file_url" alt="图片预览">
               </template>
             </pc-preview-dialog>
           </li>
@@ -75,7 +75,7 @@ export default {
       ul li {
         display: inline-block;
         border: 1px solid #f2f2f2;
-        img {
+        .thumb {
           max-height: 80px;
         }
       }
