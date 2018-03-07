@@ -1,9 +1,10 @@
 <template>
-  <div v-if="store">
+  <div v-if="store" class="store clearfix">
     <div class="title">
       <img class="logo" :src="store.logo_url" alt="">
       <span>{{store.name}}</span>
     </div>
+    <img class="wechat-qrcode fr" v-if="store.store_detail.wechat_qrcode_url" :src="store.store_detail.wechat_qrcode_url" alt="">
     <div class="info">
       <div style="display: flex; align-items: center">
         <pc-rank :score="store.rank" class="br10"></pc-rank>
@@ -45,7 +46,7 @@ export default {
 
 <style lang="scss" scoped>
   .title {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     font-size: 20px;
     padding-bottom: 6px;
