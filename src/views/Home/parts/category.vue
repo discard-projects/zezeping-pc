@@ -42,8 +42,8 @@ export default {
   },
   watch: {
     name: {
-      handler (nv) {
-        if (nv) {
+      handler (nv, ov) {
+        if (nv && nv !== ov) {
           this.fetchData()
         }
       },
