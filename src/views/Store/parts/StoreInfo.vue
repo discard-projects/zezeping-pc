@@ -14,10 +14,10 @@
         <!--<span class="br10">环境：{{store.store_detail.rank_env}}</span>-->
         <!--<span>服务：{{store.store_detail.rank_service}}</span>-->
       </div>
-      <p style="margin: 8px 0;">
+      <p style="margin: 8px 0;" v-if="store.address">
         地址：{{store.address}}
       </p>
-      <p style="margin: 8px 0;">
+      <p style="margin: 8px 0;" v-if="store.store_detail.phones.length">
         电话： {{store.store_detail.phones.join(',')}}
       </p>
       <div class="attachment-images" v-if="store.attachment_images.length">
