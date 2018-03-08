@@ -1,6 +1,6 @@
 <template>
-  <div style="margin-bottom: 30px" v-if="home && home.banners.length">
-    <el-carousel class="carousel" :interval="5000">
+  <div style="margin-bottom: 30px">
+    <el-carousel class="carousel" :interval="5000" v-if="home && home.banners.length">
       <el-carousel-item v-for="banner in home.banners" :key="banner.id">
         <img :src="banner.image.url" alt="" style="width: 100%; min-height: 100%">
       </el-carousel-item>
