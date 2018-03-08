@@ -1,6 +1,7 @@
 <template>
   <div class="clearfix" style="margin-bottom: 16px">
-    <img class="fl user-logo" :src="comment.user.image" alt="">
+    <img class="fl user-logo" :src="comment.user.image" alt="" v-if="comment.user.image">
+    <Avatar :text="comment.user.id_hash" class="fl user-logo" v-else></Avatar>
     <div class="right-body">
       <ul>
         <li>
@@ -20,7 +21,7 @@
         <li>
           <div style="display: inline-block; margin-top: 5px" v-for="(attachmentImage,index) in comment.attachment_images" :key="index">
             <pc-preview-dialog>
-              <pc-link><img :src="attachmentImage.file_thumb.url" alt=""></pc-link>
+              <pc-link><img :src="attachmentImage.file_thumb.url" alt="" style="max-height: 60px"></pc-link>
               <template slot="preview">
                 <img :src="attachmentImage.file_small.url" alt="图片预览" style="max-height: 500px; width: auto; max-width: 100%">
               </template>
@@ -36,12 +37,16 @@
 </template>
 
 <script>
+import Avatar from '@/components/Shared/zeui/avatar/avatar'
 export default {
   props: {
     comment: {
       type: Object,
       require: true
     }
+  },
+  components: {
+    Avatar
   }
 }
 </script>

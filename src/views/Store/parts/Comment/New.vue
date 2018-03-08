@@ -12,6 +12,9 @@
       <el-form-item label="图片">
         <multiple-uploader v-model="form.attachment_image_ids" :attachment-images.sync="form.attachment_images"></multiple-uploader>
       </el-form-item>
+      <el-form-item label="匿名评论">
+        <el-switch v-model="form.anonymous"></el-switch>
+      </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="handlerCreate('formRef')">立即创建</el-button>
       </el-form-item>
@@ -30,6 +33,7 @@ export default {
       form: {
         rank: 0,
         content: '',
+        anonymous: false,
         attachment_image_ids: [],
         attachment_images: []
       },

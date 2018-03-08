@@ -4,7 +4,6 @@
       <slot></slot>
     </span>
     <el-dialog :visible.sync="dialogVisible" style="text-align: center" append-to-body  :width="`${dialogWidth}%`">
-      {{dialogWidth}}
       <div slot="title" style="text-align: left">
         <el-button @click.stop="moreBigger" icon="el-icon-zoom-in" v-if="dialogWidth != maxWidth" size="small"></el-button>
         <el-button @click.stop="moreSmaller" icon="el-icon-zoom-out" v-if="dialogWidth != minWidth" size="small"></el-button>
