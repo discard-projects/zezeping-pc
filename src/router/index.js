@@ -9,6 +9,7 @@ let router = new Router({
   routes: [
     { path: '/', name: 'Home', component: (resolve) => { require(['@/views/Home/Index'], resolve) } },
     { path: '/login', name: 'Login', component: (resolve) => { require(['@/views/Login'], resolve) } },
+    { path: '/profile', name: 'Profile', component: (resolve) => { require(['@/views/Profile'], resolve) } },
     { path: '/stores/:id', name: 'storeDetail', component: (resolve) => { require(['@/views/Store/Show'], resolve) } }
   ]
 })

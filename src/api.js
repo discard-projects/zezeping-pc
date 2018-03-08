@@ -25,8 +25,8 @@ cusAxios.interceptors.request.use(function (config) {
 cusAxios.interceptors.response.use(function (response) {
   Vue.prototype.$loadingBar.finish()
   // Do something with response data
-  if (response.data.message) {
-    Vue.prototype.$message({ showClose: true, message: response.data.message, type: 'success' })
+  if (response.data.msg) {
+    Vue.prototype.$message({ showClose: true, message: response.data.msg, type: 'success' })
   } else if (response.status === 204) {
     Vue.prototype.$message({ showClose: true, message: 'success', type: 'success' })
   }
@@ -40,7 +40,7 @@ cusAxios.interceptors.response.use(function (response) {
       store.dispatch('logout')
     } else if (error.response.status === 401) {
       console.log(error.response.data.errors)
-      Vue.prototype.$message({ showClose: true, message: error.response.data.message || error.response.data.errors, type: 'error' })
+      Vue.prototype.$message({ showClose: true, message: error.response.data.msg || error.response.data.errors, type: 'error' })
       store.dispatch('logout')
     } else if (error.response.status === 500) {
       Vue.prototype.$message({ showClose: true, message: 'data error!', type: 'error' })
@@ -76,6 +76,7 @@ var api = {
   // validateToken: () => instance.get('auth/validate_token'),
   // must auth
   getMeProfile: () => cusAxios.get('v1/profile'),
+  putProfile: (data) => cusAxios.put('v1/profile', data),
   // Home
   getHome: () => cusAxios.get('v1/home'),
   getHomeStores: (params) => cusAxios.get('v1/home/stores', { params }),

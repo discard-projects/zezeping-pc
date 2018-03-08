@@ -10,9 +10,13 @@
     <ul class="right-ul fr">
       <li v-if="userInfo">
         <pc-hover-pop style="display: inline-block; padding: 0 10px" class="pop">
-          <span class="title"> {{userInfo.nickname || userInfo.email}} </span>
+          <pc-link @click.native="$router.push({name: 'Profile'})">
+            <span class="title"> {{userInfo.nickname || userInfo.email}} </span>
+          </pc-link>
           <template slot="panel">
-            <pc-link @click.native="logout">退出</pc-link>
+            <div style="border-top: 1px solid #f2f2f2">
+              <pc-link @click.native="logout">退出</pc-link>
+            </div>
           </template>
         </pc-hover-pop>
       </li>

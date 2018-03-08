@@ -21,6 +21,7 @@ export default {
 <style lang="scss" scoped>
   .pc-hover-pop {
     position: relative;
+    z-index: 100;
     &:hover {
       background: #fff;
     }
