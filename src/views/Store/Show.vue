@@ -4,7 +4,7 @@
       <pc-card>
         <store-info :store="store"></store-info>
         <div class="store-opts">
-          <pc-button @click="$refs['commentNewRef'].dialogShow = true" type="primary" size="small">写点评</pc-button>
+          <el-button @click="$refs['commentNewRef'].dialogShow = true" type="primary" size="small">写点评</el-button>
           <comment-new @fetchData="refetchData" ref="commentNewRef"></comment-new>
         </div>
       </pc-card>

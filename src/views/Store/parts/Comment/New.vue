@@ -13,7 +13,7 @@
         <multiple-uploader v-model="form.attachment_image_ids" :attachment-images.sync="form.attachment_images"></multiple-uploader>
       </el-form-item>
       <el-form-item>
-        <pc-button type="primary" @click="handlerCreate('formRef')">立即创建</pc-button>
+        <el-button type="primary" @click="handlerCreate('formRef')">立即创建</el-button>
       </el-form-item>
     </el-form>
   </pc-dialog>
