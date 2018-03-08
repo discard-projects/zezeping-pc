@@ -2,7 +2,7 @@
   <pc-card>
     <div class="header">
       <div class="title">
-        <span>{{title}}</span>
+        <span>{{name}}</span>
       </div>
     </div>
     <div class="body">
@@ -29,14 +29,6 @@ export default {
     return {
       q: {
         per_page: 12
-      }
-    }
-  },
-  computed: {
-    title () {
-      switch (this.name) {
-        case 'Food':
-          return '美食'
       }
     }
   },

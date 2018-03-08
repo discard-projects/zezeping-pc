@@ -6,7 +6,7 @@
       </el-carousel-item>
     </el-carousel>
     <div class="main-body" v-if="home">
-      <category :name="category.name" v-for="category in home.categories" :key="category.id"></category>
+      <category :name="category.name" v-for="category in home.categories" :key="category.id" style="margin-bottom: 20px"></category>
     </div>
   </div>
 </template>
