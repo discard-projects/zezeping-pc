@@ -1,10 +1,14 @@
 <template>
   <div style="margin-bottom: 30px">
-    <el-carousel class="carousel" :interval="5000" v-if="home && home.banners.length">
-      <el-carousel-item v-for="banner in home.banners" :key="banner.id">
-        <img :src="banner.image.url" alt="" style="width: 100%; min-height: 100%">
-      </el-carousel-item>
-    </el-carousel>
+    <div class="carousel-container">
+      <el-carousel type="card" class="carousel" :interval="5000" v-if="home && home.banners.length">
+        <el-carousel-item v-for="banner in home.banners" :key="banner.id">
+          <div style="width: 100%; height: 100%;">
+            <img :src="banner.image.url" alt="" style="width: 100%; height: 100%;">
+          </div>
+        </el-carousel-item>
+      </el-carousel>
+    </div>
     <div class="main-body" v-if="home">
       <div class="main-panel" style="width: 1232px">
         <category :name="category.name" v-for="category in home.categories" :key="category.id" style="margin-bottom: 20px"></category>
@@ -56,8 +60,20 @@ export default {
     right: -170px;
   }
 }
-.carousel {
+.carousel-container {
   width: 100%;
-  max-height: 300px;
+  display: flex;
+  justify-content: center;
+  .carousel {
+    width: 1232px;
+  }
 }
+</style>
+
+<style lang="scss">
+  .carousel-container {
+    .el-carousel__mask {
+      opacity: 0.7;
+    }
+  }
 </style>
