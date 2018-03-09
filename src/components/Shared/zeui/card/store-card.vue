@@ -1,13 +1,9 @@
 <template>
-  <div class="ze-shop-card">
-    <pc-link @click.native="$router.push({name: 'storeDetail', params: {id: store.id}})">
-      <img :src="store.logo.url" alt="">
-    </pc-link>
-    <pc-link @click.native="$router.push({name: 'storeDetail', params: {id: store.id}})">
-      <div class="title">
-        <span>{{store.name}}</span>
-      </div>
-    </pc-link>
+  <div class="ze-shop-card" @click="$router.push({name: 'storeDetail', params: {id: store.id}})">
+    <img :src="store.logo.url" alt="">
+    <div class="title">
+      <span>{{store.name}}</span>
+    </div>
     <div class="info">
       <div class="clearfix">
         <pc-rank :score="store.rank"></pc-rank>
@@ -41,16 +37,19 @@ export default {
     padding: 0 10px;
     margin-bottom: 20px;
     text-align: left;
+    padding: 15px;
+
+    transition: transform 0.2s;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.02);
+      box-shadow: 0 0 5px #f2f2f2;
+    }
 
     img {
       max-width: 180px;
       max-height: 100px;
       margin-bottom: 5px;
-      transition: transform 0.2s;
-      &:hover {
-        transform: scale(1.02);
-        box-shadow: 0 0 5px #555;
-      }
     }
 
     .title {

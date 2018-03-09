@@ -8,7 +8,7 @@
     <div class="body">
       <store-card v-for="store in tableData.data" :store="store" :key="store.id"></store-card>
       <div>
-        <pagination :q="q" :paginateMeta="paginateMeta" :pageSizes="[12]" :pushRouter="fetchData" layout="prev, pager, next"></pagination>
+        <pagination :q="q" :paginateMeta="paginateMeta" :pageSizes="[12]" :pushRouter="fetchData" layout="prev, pager, next" v-if="paginateMeta.total_pages > 1"></pagination>
       </div>
     </div>
   </pc-card>
