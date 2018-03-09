@@ -23,7 +23,7 @@
       <li v-else>
         <pc-link @click.native="loginFromGithub">facebook登录</pc-link>
       </li>
-      <li>帮助中心</li>
+      <!--<li>帮助中心</li>-->
     </ul>
   </div>
 </template>
