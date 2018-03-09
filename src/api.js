@@ -39,9 +39,10 @@ cusAxios.interceptors.response.use(function (response) {
       Vue.prototype.$message({ showClose: true, message: 'token overdue!', type: 'error' })
       store.dispatch('logout')
     } else if (error.response.status === 401) {
-      console.log(error.response.data.errors)
       Vue.prototype.$message({ showClose: true, message: error.response.data.msg || error.response.data.errors, type: 'error' })
       store.dispatch('logout')
+    } else if (error.response.status === 429) {
+      Vue.prototype.$message({ showClose: true, message: error.response.data, type: 'error' })
     } else if (error.response.status === 500) {
       Vue.prototype.$message({ showClose: true, message: 'data error!', type: 'error' })
     } else if (error.response.status === 404) {
