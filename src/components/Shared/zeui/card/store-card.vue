@@ -14,7 +14,7 @@
         <span class="fr">{{store.comments_count}}条点评</span>
       </div>
       <div class="clearfix">
-        <span>{{store.category_name}}</span>
+        <span>{{store.category_names.join(',')}}</span>
         <span class="fr">{{store.region_name}}</span>
       </div>
       <div style="margin-top: 5px">
