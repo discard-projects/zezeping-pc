@@ -28,7 +28,7 @@
       </div>
       <div class="clearfix" style="margin: 8px 0;" v-if="store.desc">
         <span class="fl">描述：</span>
-        <p style="overflow: hidden">{{store.desc}}</p>
+        <pre style="overflow: hidden">{{store.desc}}</pre>
       </div>
       <div class="attachment-images" v-if="store.attachment_images.length">
         <span>图片：</span>

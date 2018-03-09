@@ -6,7 +6,13 @@
       </el-carousel-item>
     </el-carousel>
     <div class="main-body" v-if="home">
-      <category :name="category.name" v-for="category in home.categories" :key="category.id" style="margin-bottom: 20px"></category>
+      <div class="main-panel" style="width: 1232px">
+        <category :name="category.name" v-for="category in home.categories" :key="category.id" style="margin-bottom: 20px"></category>
+        <div class="qrcode-dingyuehao" style="display: inline-block">
+          <img src="~assets/images/qrcode_for_dingyuehao.jpg" alt="" style="width: 150px">
+          <p style="text-align: center; color: #888">关注我们</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -42,6 +48,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.main-panel {
+  position: relative;
+  .qrcode-dingyuehao {
+    position: absolute;
+    top: 0;
+    right: -170px;
+  }
+}
 .carousel {
   width: 100%;
   max-height: 300px;
