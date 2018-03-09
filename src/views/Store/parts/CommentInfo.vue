@@ -27,7 +27,6 @@ export default {
   methods: {
     getStoreComments () {
       this.api.getStoreComments(this.$route.params.id).then(res => {
-        console.log(res.data)
         this.comments = res.data.items
       })
     }

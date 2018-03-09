@@ -42,7 +42,6 @@ export default {
   methods: {
     moreBigger () {
       let afterVa = this.dialogWidth + this.stepWidth
-      console.log(afterVa, this.maxWidth)
       this.dialogWidth = afterVa > this.maxWidth ? this.maxWidth : afterVa
     },
     moreSmaller () {

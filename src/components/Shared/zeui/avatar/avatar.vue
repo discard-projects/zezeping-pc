@@ -4,7 +4,6 @@
 
 <script>
 import Identicon from 'identicon.js'
-console.log(Identicon)
 export default {
   props: {
     text: {
