@@ -16,7 +16,11 @@ export default {
       this.$store.dispatch('setAuthInfo', this.$route.query)
       this.api.getMeProfile().then(res => {
         this.$store.dispatch('setUserInfo', res.data.item)
-        this.$router.push({name: 'Home'})
+        if (res.data.item.nickname) {
+          this.$router.push({name: 'Home'})
+        } else {
+          this.$router.push({name: 'Profile'})
+        }
       })
     }
   }

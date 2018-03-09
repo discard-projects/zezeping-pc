@@ -27,16 +27,24 @@ export default {
     }
   },
   methods: {
-    getProfile () {
+    getProfile (autoSkip) {
       this.api.getMeProfile().then(res => {
-        this.form = res.data.item
+        this.$store.dispatch('setUserInfo', res.data.item)
+        this.form = Object.assign({}, res.data.item)
+        if (autoSkip) {
+          if (res.data.item.nickname) {
+            this.$router.push({name: 'Home'})
+          } else {
+            this.$router.push({name: 'Profile'})
+          }
+        }
       })
     },
     onSubmit (formRef) {
       this.$refs[formRef].validate((valid) => {
         if (valid) {
           this.api.putProfile(this.form).then(res => {
-            this.getProfile()
+            this.getProfile(true)
           })
         }
       })
