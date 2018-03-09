@@ -17,9 +17,9 @@
         <span>{{store.category_names.join(',')}}</span>
         <span class="fr">{{store.region_name}}</span>
       </div>
-      <div style="margin-top: 5px">
-        <span>₱{{store.per_expense}}/per</span>
-      </div>
+      <!--<div style="margin-top: 5px">-->
+        <!--<span>₱{{store.per_expense}}/per</span>-->
+      <!--</div>-->
     </div>
   </div>
 </template>
