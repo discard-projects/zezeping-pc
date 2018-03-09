@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <TopHeadMenu></TopHeadMenu>
-    <router-view/>
+    <div class="main">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -14,3 +16,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.main {
+  margin-top: 41px;
+  overflow: auto;
+}
+</style>

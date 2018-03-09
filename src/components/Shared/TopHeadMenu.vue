@@ -63,7 +63,10 @@ export default {
     height: 40px;
     background: #f6f6f6;
     box-shadow: 0 0px 1px #999;
-
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
     ul {
       padding: 0 20px;
       li {
