@@ -4,7 +4,12 @@
       <img class="logo" :src="store.logo_url" alt="">
       <span>{{store.name}}</span>
     </div>
-    <img class="wechat-qrcode thumb fr" v-if="store.store_detail.wechat_qrcode_url" :src="store.store_detail.wechat_qrcode_url" alt="">
+    <pc-preview-dialog class="wechat-qrcode thumb fr" v-if="store.store_detail.wechat_qrcode.thumb.url">
+      <img :src="store.store_detail.wechat_qrcode.thumb.url" alt="" style="max-height: 60px;">
+      <template slot="preview">
+        <img :src="store.store_detail.wechat_qrcode.middle.url" alt="图片预览" style="max-width: 100%">
+      </template>
+    </pc-preview-dialog>
     <div class="info">
       <div style="display: flex; align-items: center; margin-bottom: 8px;">
         <pc-rank :score="store.rank" class="br10"></pc-rank>
@@ -14,12 +19,17 @@
         <!--<span class="br10">环境：{{store.store_detail.rank_env}}</span>-->
         <!--<span>服务：{{store.store_detail.rank_service}}</span>-->
       </div>
-      <p style="margin: 8px 0;" v-if="store.address">
-        地址：{{store.address}}
-      </p>
-      <p style="margin: 8px 0;" v-if="store.store_detail.phones.length">
+      <div class="clearfix" style="margin: 8px 0;" v-if="store.store_detail.phones.length">
         电话： {{store.store_detail.phones.join(',')}}
-      </p>
+      </div>
+      <div class="clearfix" style="margin: 8px 0;" v-if="store.address">
+        <span class="fl">地址：</span>
+        <p style="overflow: hidden">{{store.address}}</p>
+      </div>
+      <div class="clearfix" style="margin: 8px 0;" v-if="store.desc">
+        <span class="fl">描述：</span>
+        <p style="overflow: hidden">{{store.desc}}</p>
+      </div>
       <div class="attachment-images" v-if="store.attachment_images.length">
         <span>图片：</span>
         <ul>
@@ -32,7 +42,6 @@
             </pc-preview-dialog>
           </li>
         </ul>
-        <img src="" alt="">
       </div>
     </div>
   </div>

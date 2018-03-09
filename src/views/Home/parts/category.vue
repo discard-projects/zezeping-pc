@@ -55,6 +55,5 @@ export default {
   }
 }
 .body {
-  text-align: center;
 }
 </style>
