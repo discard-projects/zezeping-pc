@@ -3,8 +3,8 @@
     <pc-link @click.native="$router.push({name: 'storeDetail', params: {id: store.id}})">
       <img :src="store.logo.url" alt="">
     </pc-link>
-    <pc-link>
-      <div class="title" @click.native="$router.push({name: 'storeDetail', params: {id: store.id}})">
+    <pc-link @click.native="$router.push({name: 'storeDetail', params: {id: store.id}})">
+      <div class="title">
         <span>{{store.name}}</span>
       </div>
     </pc-link>

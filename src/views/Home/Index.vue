@@ -1,7 +1,7 @@
 <template>
   <div style="margin-bottom: 30px">
     <div class="carousel-container">
-      <div>
+      <div v-if="home && home.banners.length">
         <div class="qrcode-dingyuehao-box">
           <span style="width: 0">&nbsp;</span>
           <div class="qrcode-dingyuehao" style="display: inline-block">
@@ -9,7 +9,7 @@
             <p style="text-align: center; color: #888">关注我们</p>
           </div>
         </div>
-        <el-carousel type="card" class="carousel" :interval="5000" v-if="home && home.banners.length">
+        <el-carousel type="card" class="carousel" :interval="5000">
           <el-carousel-item v-for="banner in home.banners" :key="banner.id">
             <div style="width: 100%; height: 100%;">
               <img :src="banner.image.url" alt="" style="width: 100%; height: 100%;">

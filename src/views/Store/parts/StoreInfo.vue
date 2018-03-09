@@ -84,8 +84,12 @@ export default {
       ul li {
         display: inline-block;
         border: 1px solid #f2f2f2;
+        margin-right: 20px;
         .thumb {
           max-height: 80px;
+        }
+        &:hover {
+          box-shadow: 0 0 2px #999;
         }
       }
     }
