@@ -1,7 +1,7 @@
 <template>
   <div v-if="store" class="store clearfix">
     <div class="title">
-      <img class="logo" :src="store.logo_url" alt="">
+      <img class="logo" :src="store.logo.url" alt="">
       <span>{{store.name}}</span>
     </div>
     <pc-preview-dialog class="wechat-qrcode thumb fr" v-if="store.store_detail.wechat_qrcode.thumb.url">
