@@ -42,7 +42,7 @@ export default {
           {validator: validators.numberValidator.minValue(0, false), trigger: 'change', message: '给个评分吧'}
         ],
         content: [
-          validators.required({message: '大爷，说点什么吧！'})
+          validators.required({message: '说点什么吧！'})
         ]
       }
     }
