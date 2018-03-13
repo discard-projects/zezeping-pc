@@ -43,17 +43,22 @@
           </li>
         </ul>
       </div>
+      <Map :position="{lat: 1.42, lng: 103.8}"></Map>
     </div>
   </div>
 </template>
 
 <script>
+import Map from '@/components/Shared/Base/Map.vue'
 export default {
   props: {
     store: {
       type: Object,
       require: true
     }
+  },
+  components: {
+    Map
   }
 }
 </script>
