@@ -43,7 +43,7 @@
           </li>
         </ul>
       </div>
-      <Map :position="{lat: 1.42, lng: 103.8}"></Map>
+      <Map :position="store.position" v-if="store.position"></Map>
     </div>
   </div>
 </template>
