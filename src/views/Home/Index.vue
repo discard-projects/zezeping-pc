@@ -20,7 +20,7 @@
     </div>
     <div class="main-body" v-if="home">
       <div class="main-panel" style="width: 1232px">
-        <category :name="category.name" v-for="category in home.categories" :key="category.id" style="margin-bottom: 20px"></category>
+        <category :category="category" v-for="category in home.categories" :key="category.id" style="margin-bottom: 20px"></category>
       </div>
     </div>
   </div>

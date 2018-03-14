@@ -2,7 +2,8 @@
   <pc-card>
     <div class="header">
       <div class="title">
-        <span>{{name}}</span>
+        <img :src="category.logo_thumb.url" v-if="category.logo_thumb.url">
+        <span>{{category.name}}</span>
       </div>
     </div>
     <div class="body">
@@ -21,7 +22,7 @@ import query from '@/components/Shared/Mixin/query'
 export default {
   mixins: [index, query],
   props: {
-    name: {
+    category: {
       require: true
     }
   },
@@ -34,7 +35,7 @@ export default {
   },
   methods: {
     fetchData () {
-      this._fetchData(this.api.getHomeStores(Object.assign({}, this.q, {category_name: this.name})))
+      this._fetchData(this.api.getHomeStores(Object.assign({}, this.q, {category_name: this.category.name})))
     }
   },
   components: {
@@ -48,8 +49,13 @@ export default {
   height: 30px;
   margin-bottom: 15px;
   .title {
-    padding-left: 40px;
-    background: url("../../../assets/images/category/meishi.png") no-repeat;
+    display: flex;
+    align-items: center;
+    img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
     line-height: 30px;
     font-size: 20px;
   }
