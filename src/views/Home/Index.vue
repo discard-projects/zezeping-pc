@@ -8,6 +8,10 @@
             <img src="~assets/images/qrcode_for_dingyuehao.jpg" alt="" style="width: 150px">
             <p style="text-align: center; color: #888">关注我们</p>
           </div>
+          <div class="qrcode-personal" style="display: inline-block">
+            <img src="~assets/images/qrcode_for_personal.jpg" alt="" style="width: 150px">
+            <p style="text-align: center; color: #888">微信客服</p>
+          </div>
         </div>
         <el-carousel type="card" class="carousel" :interval="5000">
           <el-carousel-item v-for="banner in home.banners" :key="banner.id">
@@ -64,6 +68,10 @@ export default {
     display: inline-block;
     position: absolute;
     transform: translate(22px, 22px);
+  }
+  .qrcode-personal {
+    position: absolute;
+    transform: translate(22px, 212px);
   }
 }
 
