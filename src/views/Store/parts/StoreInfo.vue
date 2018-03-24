@@ -7,7 +7,7 @@
     <pc-preview-dialog class="wechat-qrcode thumb fr" v-if="store.store_detail.wechat_qrcode.thumb.url">
       <img :src="store.store_detail.wechat_qrcode.thumb.url" alt="" style="max-height: 60px;">
       <template slot="preview">
-        <img :src="store.store_detail.wechat_qrcode.middle.url" alt="图片预览" style="max-width: 100%">
+        <img :src="store.store_detail.wechat_qrcode.url" alt="图片预览" style="max-width: 100%">
       </template>
     </pc-preview-dialog>
     <div class="info">
