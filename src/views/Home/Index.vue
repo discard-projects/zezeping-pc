@@ -68,10 +68,12 @@ export default {
     display: inline-block;
     position: absolute;
     transform: translate(22px, 22px);
+    margin-right: 20px;
   }
   .qrcode-personal {
     position: absolute;
     transform: translate(22px, 212px);
+    margin-right: 20px;
   }
 }
 

@@ -4,13 +4,11 @@
       <div class="title">
         <img :src="category.logo_thumb.url" v-if="category.logo_thumb.url">
         <span>{{category.name}}</span>
+        <pagination :q="q" :paginateMeta="paginateMeta" :pageSizes="[12]" :pushRouter="fetchData" layout="prev, next" v-if="paginateMeta.total_pages > 1" style="margin-top: 4px"></pagination>
       </div>
     </div>
     <div class="body">
       <store-card v-for="store in tableData.data" :store="store" :key="store.id"></store-card>
-      <div>
-        <pagination :q="q" :paginateMeta="paginateMeta" :pageSizes="[12]" :pushRouter="fetchData" layout="prev, pager, next" v-if="paginateMeta.total_pages > 1"></pagination>
-      </div>
     </div>
   </pc-card>
 </template>
