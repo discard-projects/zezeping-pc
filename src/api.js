@@ -91,7 +91,14 @@ var api = {
   getStore: (id) => cusAxios.get(`v1/stores/${id}`),
   getStoreComments: (storeId) => cusAxios.get(`v1/stores/${storeId}/comments`),
   postStoreComment: (storeId, data) => cusAxios.post(`v1/stores/${storeId}/comments`, data),
-  postAttachmentImage: (data) => cusAxios.post('v1/attachment_images', data, {headers: { 'Content-Type': 'multipart/form-data' }})
+  postAttachmentImage: (data) => cusAxios.post('v1/attachment_images', data, {headers: { 'Content-Type': 'multipart/form-data' }}),
+  // Post
+  getPosts: (params) => cusAxios.get('v1/posts', { params }),
+  getPost: (postId, params) => cusAxios.get(`v1/posts/${postId}`, { params }),
+  putPost: (postId, data) => cusAxios.put(`v1/posts/${postId}`, data),
+  postPost: (data) => cusAxios.post(`v1/posts`, data),
+  postPostDiscussions: (postId, data) => cusAxios.post(`v1/posts/${postId}/discussions`, data),
+  putTogglePostDiscussionApprove: (postId, discussionId) => cusAxios.put(`v1/posts/${postId}/discussions/${discussionId}/toggle_approve`)
 }
 api.install = function (Vue, options) {
   if (options.store) {

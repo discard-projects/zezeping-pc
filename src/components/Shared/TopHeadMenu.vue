@@ -8,6 +8,9 @@
       </li>
     </ul>
     <ul class="right-ul fr">
+      <li>
+        <pc-link @click.native="$router.push({name: 'Post'})" style="padding: 0 10px">帖子</pc-link>
+      </li>
       <li v-if="userInfo">
         <pc-hover-pop style="display: inline-block; padding: 0 10px" class="pop">
           <pc-link @click.native="$router.push({name: 'Profile'})">
@@ -23,7 +26,6 @@
       <li v-else>
         <pc-link @click.native="loginFromGithub">facebook登录</pc-link>
       </li>
-      <!--<li>帮助中心</li>-->
     </ul>
   </div>
 </template>

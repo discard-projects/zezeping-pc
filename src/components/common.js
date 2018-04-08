@@ -4,8 +4,8 @@ import Vue from 'vue'
 import pcui from './pcui'
 Vue.use(pcui)
 
-import { Dialog, Icon, Button, Switch, Loading, Message, Rate, Form, FormItem, Input } from 'element-ui'
-let components = [Dialog, Icon, Button, Switch, Rate, Form, FormItem, Input]
+import { Dialog, Icon, Button, Switch, Loading, Message, Rate, Form, FormItem, Input, Tabs, TabPane } from 'element-ui'
+let components = [Dialog, Icon, Button, Switch, Rate, Form, FormItem, Input, Tabs, TabPane]
 components.forEach((element) => {
   Vue.component(element.name, element)
 })
