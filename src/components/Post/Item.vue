@@ -2,10 +2,10 @@
   <div class="post-item" v-if="item">
     <div class="title clearfix">
       <div class="fl">
-        <span class="category">{{item.category_name}}</span>
-        <ul style="display: inline-block; list-style-type: circle; padding-left: 20px;">
+        <ul style="display: inline-block; list-style-type: circle; padding-left: 15px;">
           <li>
             <span>{{item.title}}</span>
+            <span class="category">{{item.category_name}}</span>
           </li>
         </ul>
       </div>
@@ -45,7 +45,8 @@ export default {
       }
 
       .category {
-        font-size: 14px;
+        padding-left: 15px;
+        font-size: 13px;
         color: #999;
         line-height: 0;
       }
