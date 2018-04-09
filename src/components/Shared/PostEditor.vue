@@ -10,10 +10,10 @@ import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 import {quillEditor, Quill} from 'vue-quill-editor'
-import { ImageDrop } from 'quill-image-drop-module'
+// import { ImageDrop } from 'quill-image-drop-module'
 import {container, ImageExtend, QuillWatch} from 'quill-image-extend-module'
 import ImageResize from 'quill-image-resize-module'
-Quill.register('modules/imageDrop', ImageDrop)
+// Quill.register('modules/imageDrop', ImageDrop)
 Quill.register('modules/imageResize', ImageResize)
 Quill.register('modules/ImageExtend', ImageExtend)
 export default {
@@ -40,7 +40,7 @@ export default {
             maxStack: 50,
             userOnly: false
           },
-          imageDrop: true,
+          // imageDrop: true,
           imageResize: {
             displayStyles: {
               backgroundColor: 'black',
