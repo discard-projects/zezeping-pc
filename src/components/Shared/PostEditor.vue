@@ -45,7 +45,8 @@ export default {
             displayStyles: {
               backgroundColor: 'black',
               border: 'none',
-              color: 'white'
+              color: 'white',
+              maxWidth: '100%'
             },
             modules: [ 'Resize', 'DisplaySize', 'Toolbar' ]
           },
