@@ -42,3 +42,10 @@
   background: #fff;
 }
 
+.iconfont {
+  color: #999;
+  &.active {
+    color: #3a8ee6;
+  }
+}
+

@@ -3,6 +3,9 @@
     <el-form-item label="标题(Title)" prop="title">
       <el-input v-model="form.title" placeholder="Please input title"></el-input>
     </el-form-item>
+    <el-form-item label="分类(Category)" prop="category_id">
+      <cascader-select v-model="form.category_id" :options="categoryOptions"></cascader-select>
+    </el-form-item>
     <el-form-item label="内容(Content)" prop="content">
       <post-editor v-model="form.content"></post-editor>
     </el-form-item>
@@ -14,6 +17,7 @@
 
 <script>
 import PostEditor from '@/components/Shared/PostEditor'
+import CascaderSelect from '@/components/Shared/Select/CascaderSelect'
 export default {
   props: {
     form: {
@@ -32,11 +36,23 @@ export default {
           {required: true, message: '请输入内容', trigger: 'blur'},
           {min: 20, message: '长度最少20个字符', trigger: 'blur'}
         ]
-      }
+      },
+      categoryOptions: []
     }
   },
+  methods: {
+    fetchCategoryOptions () {
+      this.api.getPostCategoryOptions().then(res => {
+        this.categoryOptions = res.data.items
+      })
+    }
+  },
+  mounted () {
+    this.fetchCategoryOptions()
+  },
   components: {
-    PostEditor
+    PostEditor,
+    CascaderSelect
   }
 }
 </script>

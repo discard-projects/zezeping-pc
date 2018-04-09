@@ -54,12 +54,5 @@ export default {
         color: #666;
       }
     }
-
-    .icon-vote {
-      color: #999;
-      &.active {
-        color: #3a8ee6;
-      }
-    }
   }
 </style>

@@ -1,12 +1,19 @@
 <template>
   <div class="post-item" v-if="item">
     <div class="title clearfix">
-      <h3 class="fl">{{item.title}}</h3>
+      <div class="fl">
+        <span class="category">{{item.category_name}}</span>
+        <ul style="display: inline-block; list-style-type: circle; padding-left: 20px;">
+          <li>
+            <span>{{item.title}}</span>
+          </li>
+        </ul>
+      </div>
       <p class="fr">
         <i class="iconfont icon-view">{{item.views_count}}</i>
         <i class="iconfont icon-vote">{{item.votes_count}}</i>
         <i class="iconfont icon-comment">{{item.discussions_count}}</i>
-        <i class="iconfont icon-collection">0</i>
+        <i class="iconfont icon-collection">{{item.collections_count}}</i>
       </p>
     </div>
   </div>
@@ -29,9 +36,18 @@ export default {
     padding: 0 6px;
     .title {
       line-height: 36px;
+      font-size: 15px;
+      color: #666;
+      border-bottom: 1px solid #f2f2f2;
 
       i {
         margin: 0 5px;
+      }
+
+      .category {
+        font-size: 14px;
+        color: #999;
+        line-height: 0;
       }
     }
 

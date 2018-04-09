@@ -9,6 +9,7 @@ export default {
     return {
       form: {
         title: '',
+        category_id: '',
         content: ''
       }
     }

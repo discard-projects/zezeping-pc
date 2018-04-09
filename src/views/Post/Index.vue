@@ -5,7 +5,6 @@
         <ul>
           <li v-for="post in tableData.data" :key="post.id" @click="$router.push({name: 'PostShow', params: {id: post.id}})">
             <post-item :item="post"></post-item>
-            {{post}}
           </li>
         </ul>
       </el-tab-pane>
@@ -13,7 +12,6 @@
         <ul>
           <li v-for="post in tableData.data" :key="post.id" @click="$router.push({name: 'PostShow', params: {id: post.id}})">
             <post-item :item="post"></post-item>
-            {{post}}
           </li>
         </ul>
       </el-tab-pane>
@@ -21,7 +19,6 @@
         <ul>
           <li v-for="post in tableData.data" :key="post.id" @click="$router.push({name: 'PostShow', params: {id: post.id}})">
             <post-item :item="post"></post-item>
-            {{post}}
           </li>
         </ul>
       </el-tab-pane>
@@ -29,13 +26,23 @@
         <ul>
           <li v-for="post in tableData.data" :key="post.id" @click="$router.push({name: 'PostShow', params: {id: post.id}})">
             <post-item :item="post"></post-item>
-            {{post}}
           </li>
         </ul>
       </el-tab-pane>
-      <el-tab-pane name="collected" label="我的收藏">我的收藏</el-tab-pane>
+      <el-tab-pane name="collected" label="我的收藏">
+        <ul>
+          <li v-for="post in tableData.data" :key="post.id" @click="$router.push({name: 'PostShow', params: {id: post.id}})">
+            <post-item :item="post"></post-item>
+          </li>
+        </ul>
+      </el-tab-pane>
       <el-tab-pane name="my" label="我的帖子">
-        <el-button class="fr" @click="$router.push({name: 'PostNew'})">新增帖子</el-button>
+        <el-button size="mini" type="primary" class="fr" @click="goPostNew">新增帖子</el-button>
+        <ul class="clearfix">
+          <li v-for="post in tableData.data" :key="post.id" @click="$router.push({name: 'PostShow', params: {id: post.id}})">
+            <post-item :item="post"></post-item>
+          </li>
+        </ul>
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -65,10 +72,13 @@ export default {
           this.fetchData({qs_sorts: 'votes_count desc', q_page: 1})
           break
         case 'collections-hot':
+          this.fetchData({qs_sorts: 'collections_count desc', q_page: 1})
           break
         case 'collected':
+          this.fetchData({q_collections_user_id_eq: 3, q_page: 1})
           break
         case 'my':
+          this.fetchData({q_user_id_eq: 3, q_page: 1})
           break
       }
     }
@@ -79,6 +89,9 @@ export default {
         extraQuery = {qs_sorts: 'created_at desc'}
       }
       this._fetchData(this.api.getPosts(Object.assign({}, this.q, extraQuery)))
+    },
+    goPostNew () {
+      this.validLogin() && this.$router.push({name: 'PostNew'})
     }
   },
   components: {

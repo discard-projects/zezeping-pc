@@ -21,3 +21,11 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+Vue.prototype.validLogin = () => {
+  if (store.state.user.authInfo) {
+    return store.state.user.authInfo
+  } else {
+    alert('请先登录')
+  }
+}

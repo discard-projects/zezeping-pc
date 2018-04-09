@@ -97,8 +97,12 @@ var api = {
   getPost: (postId, params) => cusAxios.get(`v1/posts/${postId}`, { params }),
   putPost: (postId, data) => cusAxios.put(`v1/posts/${postId}`, data),
   postPost: (data) => cusAxios.post(`v1/posts`, data),
+  getPostCategoryOptions: () => cusAxios.get('v1/categories/index_tree', {params: {q_category_eq: 'category_post'}}),
   postPostDiscussions: (postId, data) => cusAxios.post(`v1/posts/${postId}/discussions`, data),
+  putTogglePostApprove: (postId) => cusAxios.put(`v1/posts/${postId}/toggle_approve`),
+  putTogglePostCollect: (postId) => cusAxios.put(`v1/posts/${postId}/toggle_collect`),
   putTogglePostDiscussionApprove: (postId, discussionId) => cusAxios.put(`v1/posts/${postId}/discussions/${discussionId}/toggle_approve`)
+
 }
 api.install = function (Vue, options) {
   if (options.store) {
