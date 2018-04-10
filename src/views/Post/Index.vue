@@ -52,12 +52,18 @@
 import PostItem from '@/components/Post/Item'
 import index from '@/components/Shared/Mixin/index'
 import query from '@/components/Shared/Mixin/query'
+import { mapState } from 'vuex'
 export default {
   mixins: [index, query],
   data () {
     return {
       activeTabName: 'new'
     }
+  },
+  computed: {
+    ...mapState({
+      userInfo: state => state.user.userInfo
+    })
   },
   watch: {
     activeTabName (newVal) {
@@ -75,10 +81,10 @@ export default {
           this.fetchData({qs_sorts: 'collections_count desc', q_page: 1})
           break
         case 'collected':
-          this.fetchData({q_collections_user_id_eq: 3, q_page: 1})
+          this.fetchData({q_collections_user_id_eq: this.userInfo && this.userInfo.id, q_page: 1})
           break
         case 'my':
-          this.fetchData({q_user_id_eq: 3, q_page: 1})
+          this.fetchData({q_user_id_eq: this.userInfo && this.userInfo.id, q_page: 1})
           break
       }
     }
